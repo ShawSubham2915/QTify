@@ -5,7 +5,7 @@ const Section = ({ title, children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <Box mb={5}>
+    <Box  p={2} borderBottom={"1px solid #34C94B"}>
       <Box
         display="flex"
         justifyContent="space-between"

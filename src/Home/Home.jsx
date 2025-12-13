@@ -4,6 +4,7 @@ import './Home.module.css'
 import Hero from '../components/Hero/Hero'
 import Section from '../components/Section/Section'
 import TopSongs from '../components/Songs/TopSongs'
+import NewSongs from '../components/Songs/NewSongs/NewSongs'
 
 const Home = () => {
   return (
@@ -12,8 +13,12 @@ const Home = () => {
 
       <Hero />
 
-      <Section title="Top Songs" >
+      <Section title="Top Songs" showDivider>
         <TopSongs />
+      </Section>
+
+      <Section title="New Songs" >
+        <NewSongs />
       </Section>
     </div>
   )
