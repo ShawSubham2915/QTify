@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Box } from "@mui/material";
+import Carousel from "../../Carousel/Carousel";
 import AlbumCard from "../../Section/AlbumCard/AlbumCard";
 
 const NewSongs = () => {
@@ -10,15 +11,29 @@ const NewSongs = () => {
     axios
       .get("https://qtify-backend.labs.crio.do/albums/new")
       .then((res) => setAlbums(res.data))
-      .catch((err) => console.error(err));
+      .catch(console.error);
   }, []);
 
-  return (
+  const carouselView = (
+    <Carousel
+      items={albums}
+      renderItem={(album) => (
+        <AlbumCard
+          key={album.id}
+          image={album.image}
+          title={album.title}
+          follows={album.follows}
+        />
+      )}
+    />
+  );
+
+  const gridView = (
     <Box
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
-        gap: "24px",
+        gap: "30px",
       }}
     >
       {albums.map((album) => (
@@ -31,6 +46,8 @@ const NewSongs = () => {
       ))}
     </Box>
   );
+
+  return { carouselView, gridView };
 };
 
 export default NewSongs;
