@@ -23,7 +23,7 @@ const TopSongs = () => {
           key={album.id}
           image={album.image}
           title={album.title}
-          follows={album.follows}
+          chipLabel={`${album.follows} Follows`}
         />
       )}
     />
@@ -42,7 +42,7 @@ const TopSongs = () => {
           key={album.id}
           image={album.image}
           title={album.title}
-          follows={album.follows}
+          chipLabel={`${album.follows} Follows`}
         />
       ))}
     </Box>

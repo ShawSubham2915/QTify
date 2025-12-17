@@ -1,6 +1,6 @@
 import { Card, CardMedia, Chip, Typography, Box } from "@mui/material";
 
-const AlbumCard = ({ image, title, follows }) => {
+const AlbumCard = ({ image, title, chipLabel }) => {
   return (
     <Box sx={{ width: 160 }}>
       <Card
@@ -21,13 +21,10 @@ const AlbumCard = ({ image, title, follows }) => {
           }}
         />
         <Box
-          sx={{
-            px: 1,
-            py: 1,
-          }}
+          sx={{px: 1, py: 1, }}
         >
           <Chip
-            label={`${follows} Follows`}
+            label={chipLabel}
             size="small"
             sx={{
               backgroundColor: "#121212",

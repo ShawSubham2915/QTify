@@ -1,7 +1,7 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
 
-const Section = ({ title, carousel, children }) => {
+const Section = ({ title, carousel, children, hideToggle = false }) => {
   const [showAll, setShowAll] = useState(false);
 
   return (
@@ -17,15 +17,17 @@ const Section = ({ title, carousel, children }) => {
             {title}
           </Typography>
 
+          {!hideToggle && (
           <Button
             onClick={() => setShowAll(!showAll)}
             sx={{ color: "#34C94B", textTransform: "none" }}
           >
             {showAll ? "Collapse" : "Show All"}
           </Button>
+        )}
         </Box>
 
-        {showAll ? children : carousel}
+        {hideToggle ? carousel : showAll ? children : carousel}
       </Box>
 
 

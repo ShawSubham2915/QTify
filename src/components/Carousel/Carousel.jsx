@@ -14,7 +14,7 @@ const Carousel = ({ items, renderItem }) => {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         spaceBetween="30px"
         slidesPerView="auto"
-        style={{ paddingBottom: "8px",  }}
+        style={{ paddingBottom: "8px",}}
         breakpoints={{
           1024: {
             slidesPerView: 7,
@@ -24,7 +24,7 @@ const Carousel = ({ items, renderItem }) => {
         {items.map((item) => (
           <SwiperSlide
             key={item.id}
-            style={{ width: "auto" }}
+            style={{ width: "auto",}}
           >
             {renderItem(item)}
           </SwiperSlide>
